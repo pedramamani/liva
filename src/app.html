@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        let themeId = 0
+        const themeIdString = localStorage.getItem("themeId")
+        if (themeIdString) themeId = parseInt(themeIdString)
+        else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) themeId = 1
+        document.documentElement.style.backgroundColor = themeId ? "#27272d" : "#ffffff"
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="%sveltekit.assets%/logo.png">
+    <title>Project Liva</title>
+    <meta name="description" content="Record, monitor, and track your life's minutes">
+    <link rel="stylesheet" href="%sveltekit.assets%/style.css">
+    %sveltekit.head%
+</head>
+<body>
+%sveltekit.body%
+</body>
+</html>
